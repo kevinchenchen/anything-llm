@@ -133,11 +133,11 @@ app.get("/accepts", function (_, response) {
 app.all("*", function (_, response) {
   response.sendStatus(200);
 });
-
+const COLLECTOR_PORT = `${process.env.COLLECTOR_PORT || 8888}`;//通过collector/.env配置文件获取collector端口号
 app
-  .listen(8888, async () => {
+  .listen(COLLECTOR_PORT, async () => {
     await wipeCollectorStorage();
-    console.log(`Document processor app listening on port 8888`);
+    console.log(`Document processor app listening on port %d ...`,COLLECTOR_PORT);
   })
   .on("error", function (_) {
     process.once("SIGUSR2", function () {
