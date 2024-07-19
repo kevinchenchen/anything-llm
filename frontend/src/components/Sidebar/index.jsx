@@ -28,7 +28,7 @@ export default function Sidebar() {
     <div>
       <Link
         to={paths.home()}
-        className="flex shrink-0 max-w-[55%] items-center justify-start mx-[38px] my-[18px]"
+        className="flex shrink-0 max-w-[55%] items-center justify-center mx-auto my-[18px]"
         aria-label="Home"
       >
         <img
